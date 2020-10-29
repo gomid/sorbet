@@ -6,7 +6,7 @@ InsSeq{
       name = EmptyTree<<C <U <root>>>>
       ancestors = [ConstantLit{
           orig = nullptr
-          symbol = ::<todo sym>
+          symbol = ::<todo sym>, symbol-kind = class
         }]
       rhs = [
         MethodDef{
@@ -20,7 +20,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::<Magic>
+                  symbol = ::<Magic>, symbol-kind = class
                 }
                 fun = <U <define-top-class-or-module>>
                 block = nullptr
@@ -28,14 +28,14 @@ InsSeq{
                 args = [
                   ConstantLit{
                     orig = nullptr
-                    symbol = ::A
+                    symbol = ::A, symbol-kind = class
                   }
                 ]
               }
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_for_ide>
                 block = nullptr
@@ -46,7 +46,7 @@ InsSeq{
                       scope = EmptyTree
                       cnst = <C <U A>>
                     }
-                    symbol = ::A
+                    symbol = ::A, symbol-kind = class
                   }
                 ]
               }
@@ -63,11 +63,11 @@ InsSeq{
           scope = EmptyTree
           cnst = <C <U A>>
         }
-        symbol = ::A
+        symbol = ::A, symbol-kind = class
       }<<C <U A>>>
       ancestors = [ConstantLit{
           orig = nullptr
-          symbol = ::<todo sym>
+          symbol = ::<todo sym>, symbol-kind = class
         }]
       rhs = [
         MethodDef{
@@ -102,7 +102,7 @@ InsSeq{
               scope = EmptyTree
               cnst = <C <U DOES_NOT_EXIST>>
             }
-            symbol = ::Sorbet::Private::Static::StubModule
+            symbol = ::Sorbet::Private::Static::StubModule, symbol-kind = module
             resolutionScopes = [::A, ::<root>]
           }
         }
@@ -195,7 +195,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_for_typechecking>
                 block = nullptr
@@ -207,7 +207,7 @@ InsSeq{
                         scope = EmptyTree
                         cnst = <C <U T>>
                       }
-                      symbol = ::T
+                      symbol = ::T, symbol-kind = module
                     }
                     fun = <U nilable>
                     block = nullptr
@@ -218,7 +218,7 @@ InsSeq{
                           scope = EmptyTree
                           cnst = <C <U Integer>>
                         }
-                        symbol = ::Integer
+                        symbol = ::Integer, symbol-kind = class
                       }
                     ]
                   }
@@ -245,7 +245,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_def>
                 block = nullptr
@@ -260,7 +260,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_def>
                 block = nullptr
@@ -275,7 +275,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_def>
                 block = nullptr
@@ -290,7 +290,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_def>
                 block = nullptr
@@ -305,7 +305,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_def>
                 block = nullptr
@@ -320,7 +320,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_def>
                 block = nullptr
@@ -335,7 +335,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_def>
                 block = nullptr
@@ -350,7 +350,7 @@ InsSeq{
               Send{
                 recv = ConstantLit{
                   orig = nullptr
-                  symbol = ::Sorbet::Private::Static
+                  symbol = ::Sorbet::Private::Static, symbol-kind = module
                 }
                 fun = <U keep_def>
                 block = nullptr

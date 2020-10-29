@@ -3,7 +3,7 @@ ClassDef{
   name = EmptyTree<<C <U <root>>>>
   ancestors = [ConstantLit{
       orig = nullptr
-      symbol = ::<todo sym>
+      symbol = ::<todo sym>, symbol-kind = class
     }]
   rhs = [
     ClassDef{
@@ -14,7 +14,7 @@ ClassDef{
       }<<C <U <todo sym>>>>
       ancestors = [ConstantLit{
           orig = nullptr
-          symbol = ::<todo sym>
+          symbol = ::<todo sym>, symbol-kind = class
         }]
       rhs = [
         MethodDef{

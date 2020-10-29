@@ -3,13 +3,13 @@ ClassDef{
   name = EmptyTree<<C <U <root>>>>
   ancestors = [ConstantLit{
       orig = nullptr
-      symbol = ::<todo sym>
+      symbol = ::<todo sym>, symbol-kind = class
     }]
   rhs = [
     UnresolvedConstantLit{
       scope = ConstantLit{
         orig = nullptr
-        symbol = ::<root>
+        symbol = ::<root>, symbol-kind = class
       }
       cnst = <C <U TopLevelConst>>
     }
