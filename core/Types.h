@@ -694,6 +694,13 @@ struct DispatchArgs {
      * messages. `selfType` is primarily used to implement `T.self_type`.
      */
 
+    DispatchArgs(NameRef name, const CallLocs &locs, u2 numPosArgs, InlinedVector<const TypeAndOrigins *, 2> &args,
+                 const TypePtr &selfType, const TypePtr &fullType, const TypePtr &thisType,
+                 const std::shared_ptr<const SendAndBlockLink> &block, Loc originForUninitialized)
+        : originForUninitialized(originForUninitialized), name(name), locs(locs), numPosArgs(numPosArgs), args(args),
+          selfType(selfType), fullType(fullType), thisType(thisType), block(block) {}
+
+    Loc originForUninitialized;
     NameRef name;
     const CallLocs &locs;
     u2 numPosArgs;
@@ -702,7 +709,6 @@ struct DispatchArgs {
     const TypePtr &fullType;
     const TypePtr &thisType;
     const std::shared_ptr<const SendAndBlockLink> &block;
-    Loc originForUninitialized;
 
     DispatchArgs withSelfRef(const TypePtr &newSelfRef);
     DispatchArgs withThisRef(const TypePtr &newThisRef);
