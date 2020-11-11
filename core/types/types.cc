@@ -21,8 +21,8 @@ namespace sorbet::core {
 
 using namespace std;
 
-TypePtr Types::dispatchCallWithoutBlock(const GlobalState &gs, const TypePtr &recv, DispatchArgs args) {
-    auto dispatched = recv->dispatchCall(gs, move(args));
+TypePtr Types::dispatchCallWithoutBlock(const GlobalState &gs, const TypePtr &recv, const DispatchArgs &args) {
+    auto dispatched = recv->dispatchCall(gs, args);
     auto link = &dispatched;
     while (link != nullptr) {
         for (auto &err : link->main.errors) {
@@ -588,12 +588,12 @@ bool SelfTypeParam::derivesFrom(const GlobalState &gs, SymbolRef klass) const {
     return false;
 }
 
-DispatchResult LambdaParam::dispatchCall(const GlobalState &gs, DispatchArgs args) {
+DispatchResult LambdaParam::dispatchCall(const GlobalState &gs, const DispatchArgs &args) {
     Exception::raise(
         "LambdaParam::dispatchCall not implemented, not clear what it should do. Let's see this fire first.");
 }
 
-DispatchResult SelfTypeParam::dispatchCall(const GlobalState &gs, DispatchArgs args) {
+DispatchResult SelfTypeParam::dispatchCall(const GlobalState &gs, const DispatchArgs &args) {
     auto untypedUntracked = Types::untypedUntracked();
     return untypedUntracked->dispatchCall(gs, args.withThisRef(untypedUntracked));
 }
@@ -650,7 +650,7 @@ bool SelfType::derivesFrom(const GlobalState &gs, SymbolRef klass) const {
     Exception::raise("should never happen");
 }
 
-DispatchResult SelfType::dispatchCall(const GlobalState &gs, DispatchArgs args) {
+DispatchResult SelfType::dispatchCall(const GlobalState &gs, const DispatchArgs &args) {
     Exception::raise("should never happen");
 }
 
@@ -749,11 +749,11 @@ core::SymbolRef Types::getRepresentedClass(const GlobalState &gs, const TypePtr 
     return singleton.data(gs)->attachedClass(gs);
 }
 
-DispatchArgs DispatchArgs::withSelfRef(const TypePtr &newSelfRef) {
+DispatchArgs DispatchArgs::withSelfRef(const TypePtr &newSelfRef) const {
     return DispatchArgs{name, locs, numPosArgs, args, newSelfRef, fullType, newSelfRef, block, originForUninitialized};
 }
 
-DispatchArgs DispatchArgs::withThisRef(const TypePtr &newThisRef) {
+DispatchArgs DispatchArgs::withThisRef(const TypePtr &newThisRef) const {
     return DispatchArgs{name, locs, numPosArgs, args, selfType, fullType, newThisRef, block, originForUninitialized};
 }
 } // namespace sorbet::core
